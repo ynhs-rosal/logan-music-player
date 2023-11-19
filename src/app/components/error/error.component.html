@@ -1,0 +1,16 @@
+<div
+  *ngIf="authorizationError$ | async as authorizationError; else defaultError"
+  class="logan-error"
+>
+  <div class="logan-error__title">{{ authorizationError?.status }}</div>
+  <div class="mb-4">{{ authorizationError?.error_description }}</div>
+  <button type="button" class="btn" (click)="authenticate()">Try again</button>
+</div>
+<ng-template #defaultError>
+  <div class="logan-error">
+    <div class="logan-error__title mb-4">Something went wrong</div>
+    <button type="button" class="btn" (click)="authenticate()">
+      Try again
+    </button>
+  </div>
+</ng-template>

@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variables";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: $logan-color-bg;
+  color: $logan-color-text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Bootstrap styles override
+.btn {
+  --bs-btn-color: #adb5bd;
+  --bs-btn-border-color: #adb5bd;
+  --bs-btn-hover-border-color: #f8f9fa;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-padding-y: 0.5rem;
+}
+.progress {
+  --bs-progress-height: 0.3rem;
+  --bs-progress-bg: #adb5bd;
+  --bs-progress-bar-color: #adb5bd;
+  --bs-progress-bar-bg: #f8f9fa;
+}
+.progress:hover {
+  --bs-progress-bar-bg: #f8f9fa;
+}
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: #212529;
+}

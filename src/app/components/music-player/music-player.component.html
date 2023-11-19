@@ -1,0 +1,51 @@
+<div class="logan-music-player">
+  <div class="logan-music-player__cover">
+    <img class="logan-music-player__cover" [src]="cover" />
+  </div>
+
+  <div class="logan-music-player__track">
+    <div class="mb-2">
+      <div class="logan-music-player__track--title">{{ track?.name }}</div>
+      <div class="logan-music-player__track--artist fw-light">
+        {{ track?.artists[0]?.name }}
+      </div>
+    </div>
+    <div class="logan-music-player__track--progress">
+      <div class="logan-music-player__track--progress-duration">
+        {{ progressMs | formatMs }}
+      </div>
+      <div
+        class="logan-music-player__track--progress-bar progress"
+        role="progressbar"
+        [attr.aria-valuenow]="progressMs | progressPercentage : durationMs"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <div
+          class="progress-bar"
+          [style.width.%]="progressMs | progressPercentage : durationMs"
+        ></div>
+      </div>
+      <div class="logan-music-player__track--progress-duration">
+        {{ durationMs | formatMs }}
+      </div>
+    </div>
+
+    <div class="logan-music-player__track--action">
+      <i class="bi bi-skip-start-fill"></i>
+      <ng-container *ngIf="!isTrackPlaying; else pauseTrack">
+        <i
+          class="bi bi-play-circle-fill logan-music-player__track--action--play"
+          (click)="startOrResumePlayback()"
+        ></i>
+      </ng-container>
+      <ng-template #pauseTrack>
+        <i
+          class="bi bi-pause-circle-fill logan-music-player__track--action--pause"
+          (click)="pausePlayback()"
+        ></i>
+      </ng-template>
+      <i class="bi bi-skip-end-fill"></i>
+    </div>
+  </div>
+</div>

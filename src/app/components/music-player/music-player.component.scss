@@ -1,0 +1,53 @@
+@import "../../../variables";
+
+.logan-music-player {
+  &__cover {
+    height: 70vh;
+    // border-radius: 0 0 50vh 50vh;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  }
+
+  &__track {
+    text-align: center;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__track--progress {
+    display: flex;
+  }
+
+  &__track--progress-bar {
+    width: 400px;
+    margin: 8px;
+  }
+
+  &__track--progress-duration {
+    font-size: 12px;
+  }
+
+  &__track--action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+
+    i {
+      cursor: pointer;
+      color: $logan-color-secondary;
+    }
+    i:hover {
+      color: $logan-color-accent;
+    }
+
+    &--play,
+    &--pause {
+      margin-right: 24px;
+      margin-left: 24px;
+      font-size: 32px;
+    }
+  }
+}
