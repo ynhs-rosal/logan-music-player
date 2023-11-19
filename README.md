@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
+It uses the Spotify's Web APIs to retrieve, play and pause a specific track. In order for this application to run, you would need to supply clientId, clientSecret, userId and activeDevice in the environment file by following Spotify's guide:
+
+Client ID and Client Secret: https://developer.spotify.com/documentation/web-api/tutorials/getting-started
+User ID: Go to your account profile in Spotify (https://www.spotify.com/ph-en/account/overview/) and click Edit profile. The Username in your profile is your User ID.
+Active Device: Retrieve the ID of the device where Spotify is playing by hitting Get Available Devices API (https://developer.spotify.com/documentation/web-api/reference/get-a-users-available-devices)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
